@@ -2,7 +2,7 @@
     "name": "blink",
     "displayName": "Blink Script",
     "description": "The Foundry's Nuke Blink script syntax support and snippets for VSCode",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "melmass",
     "engines": {
         "vscode": "^1.12.0"
@@ -34,6 +34,34 @@
             }
         ],
         "snippets": [
+            {
+                "language": "blink",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "blink",
+                "path": "./snippets/arguments.json"
+            },
+            {
+                "language": "blink",
+                "path": "./snippets/attributes.json"
+            },
+            {
+                "language": "blink",
+                "path": "./snippets/controls.json"
+            },
+            {
+                "language": "blink",
+                "path": "./snippets/math.json"
+            },
+            {
+                "language": "blink",
+                "path": "./snippets/methods.json"
+            },
+            {
+                "language": "blink",
+                "path": "./snippets/types.json"
+            },
             {
                 "language": "blink",
                 "path": "./snippets/snippets.json"
