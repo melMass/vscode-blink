@@ -1,4 +1,5 @@
 {
+	// BASICS
 	"do": {
 		"prefix": "do",
 		"body": "\r\ndo{\r\n\t$1\r\n} while(${2:condition});",
@@ -16,5 +17,674 @@
 		"body": "\r\nkernel ${1:kernelName}: ImageComputationKernel<e${2:Component}Wise>{\r\n\tImage<e${3:Read}, eAccess${4:Point}, eEdge${5:None}> ${6:in};\r\n\tImage<e${7:Write}> ${8:out};\r\n\r\n\tparam:\r\n\t\t$9\r\n\r\n\tlocal:\r\n\t\t$10\r\n\r\n\t//In define(), parameters can be given labels and default values.\r\n\tvoid define(){\r\n\t\t$11\r\n\t}\r\n\r\n\t//The init() function is run before any calls to process()\r\n\tvoid init(){\r\n\t\t$12\r\n\t}\r\n\r\n\t//The process function is run at every pixel to produce the output\r\n\tvoid process($13){\r\n\t\t${14:out() = in();}\r\n\t}\r\n};",
 		"description": "",
 		"scope": "source.blink"
+	},
+
+	// TYPES
+	"int": {
+        "prefix": "int",
+        "body": "int$0"
+    },
+    "int2": {
+        "prefix": "int2",
+        "body": "int2$0"
+    },
+    "int3": {
+        "prefix": "int3",
+        "body": "int3$0"
+    },
+    "int4": {
+        "prefix": "int4",
+        "body": "int4$0"
+    },
+    "float": {
+        "prefix": "float",
+        "body": "float$0"
+    },
+    "float2": {
+        "prefix": "float2",
+        "body": "float2$0"
+    },
+    "float3": {
+        "prefix": "float3",
+        "body": "float3$0"
+    },
+    "float4": {
+        "prefix": "float4",
+        "body": "float4$0"
+    },
+    "float3x3": {
+        "prefix": "float3x3",
+        "body": "float3x3$0"
+    },
+    "float4x4": {
+        "prefix": "float4x4",
+        "body": "float4x4$0"
+    },
+    "bool": {
+        "prefix": "bool",
+        "body": "bool$0"
+    },
+    "recti": {
+        "prefix": "recti",
+        "body": "recti$0"
+    },
+    "rectf": {
+        "prefix": "rectf",
+        "body": "rectf$0"
 	}
+
+	// METHODS
+	"int": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", ${3:0});$0"
+    },
+    "int2": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", int2(${3:0}, ${4:0}));$0"
+    },
+    "int3": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", int3(${3:0}, ${4:0}, ${5:0}));$0"
+    },
+    "int4": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", int4(${3:0}, ${4:0}, ${5:0}, ${6:0}));$0"
+    },
+    "float": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", ${3:0.0}f);$0"
+    },
+    "float2": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", float2(${3:0.0}f, ${4:0.0}f));$0"
+    },
+    "float3": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", float3(${3:0.0}f, ${4:0.0}f, ${5:0.0}f));$0"
+    },
+    "float4": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", float4(${3:0.0}f, ${4:0.0}f, ${5:0.0}f, ${6:0.0}f));$0"
+    },
+    "bool": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", ${3:false});$0"
+    },
+    "axis 1D": {
+        "prefix": "setAxis",
+        "body": "setAxis(e${1:X})$0"
+    },
+    "int min, int max 1D": {
+        "prefix": "setRange",
+        "body": "setRange(${1:-1}, ${2:1})$0"
+    },
+    "xMin, yMin, xMax, yMax 2D": {
+        "prefix": "setRange",
+        "body": "setRange(${1:-1}, ${2:-1}, ${3:1}, ${4:1})$0"
+    },
+    "image": {
+        "prefix": "SampleType",
+        "body": "SampleType(${1:in})$0"
+    },
+    "image, float x, float y": {
+        "prefix": "bilinear",
+        "body": "bilinear(${1:in}, ${2:0.0}f, ${3:0.0}f)$0"
+    },
+    "image, float x, float y, int c": {
+        "prefix": "bilinear",
+        "body": "bilinear(${1:in}, ${2:0.0}f, ${3:0.0}f, ${4:0})$0"
+    },
+    "median": {
+        "prefix": "median",
+        "body": "median$0"
+    },
+    "rect": {
+        "prefix": "rect",
+        "body": "rect$0"
+    },
+    "grow": {
+        "prefix": "grow",
+        "body": "grow$0"
+    },
+    "inside": {
+        "prefix": "inside",
+        "body": "inside$0"
+    },
+    "width": {
+        "prefix": "width",
+        "body": "width$0"
+    },
+    "height": {
+        "prefix": "height",
+        "body": "height$0"
+    },
+    "atomicAdd": {
+        "prefix": "atomicAdd",
+        "body": "atomicAdd$0"
+    },
+    "atomicInc": {
+        "prefix": "atomicInc",
+        "body": "atomicInc$0"
+	}
+
+	// MATH
+
+	"dot": {
+        "prefix": "dot",
+        "body": "dot$0"
+    },
+    "cross": {
+        "prefix": "cross",
+        "body": "cross$0"
+    },
+    "length": {
+        "prefix": "length",
+        "body": "length$0"
+    },
+    "normalize": {
+        "prefix": "normalize",
+        "body": "normalize$0"
+    },
+    "sin": {
+        "prefix": "sin",
+        "body": "sin$0"
+    },
+    "cos": {
+        "prefix": "cos",
+        "body": "cos$0"
+    },
+    "tan": {
+        "prefix": "tan",
+        "body": "tan$0"
+    },
+    "asin": {
+        "prefix": "asin",
+        "body": "asin$0"
+    },
+    "acos": {
+        "prefix": "acos",
+        "body": "acos$0"
+    },
+    "atan": {
+        "prefix": "atan",
+        "body": "atan$0"
+    },
+    "atan2": {
+        "prefix": "atan2",
+        "body": "atan2$0"
+    },
+    "exp": {
+        "prefix": "exp",
+        "body": "exp$0"
+    },
+    "log": {
+        "prefix": "log",
+        "body": "log$0"
+    },
+    "log2": {
+        "prefix": "log2",
+        "body": "log2$0"
+    },
+    "log10": {
+        "prefix": "log10",
+        "body": "log10$0"
+    },
+    "floor": {
+        "prefix": "floor",
+        "body": "floor$0"
+    },
+    "ceil": {
+        "prefix": "ceil",
+        "body": "ceil$0"
+    },
+    "round": {
+        "prefix": "round",
+        "body": "round$0"
+    },
+    "pow": {
+        "prefix": "pow",
+        "body": "pow$0"
+    },
+    "sqrt": {
+        "prefix": "sqrt",
+        "body": "sqrt$0"
+    },
+    "rsqrt": {
+        "prefix": "rsqrt",
+        "body": "rsqrt$0"
+    },
+    "abs": {
+        "prefix": "abs",
+        "body": "abs$0"
+    },
+    "fabs": {
+        "prefix": "fabs",
+        "body": "fabs$0"
+    },
+    "fmod": {
+        "prefix": "fmod",
+        "body": "fmod$0"
+    },
+    "modf": {
+        "prefix": "modf",
+        "body": "modf$0"
+    },
+    "sign": {
+        "prefix": "sign",
+        "body": "sign$0"
+    },
+    "min": {
+        "prefix": "min",
+        "body": "min$0"
+    },
+    "max": {
+        "prefix": "max",
+        "body": "max$0"
+    },
+    "clamp": {
+        "prefix": "clamp",
+        "body": "clamp$0"
+    },
+    "rcp": {
+        "prefix": "rcp",
+        "body": "rcp$0"
+	},
+
+	// CONTROLS
+
+	"param": {
+        "prefix": "param",
+        "body": "param$0"
+    },
+    "local": {
+        "prefix": "local",
+        "body": "local$0"
+    },
+    "and": {
+        "prefix": "and",
+        "body": "and$0"
+    },
+    "asm": {
+        "prefix": "asm",
+        "body": "asm$0"
+    },
+    "auto": {
+        "prefix": "auto",
+        "body": "auto$0"
+    },
+    "bitand": {
+        "prefix": "bitand",
+        "body": "bitand$0"
+    },
+    "bitor": {
+        "prefix": "bitor",
+        "body": "bitor$0"
+    },
+    "break": {
+        "prefix": "break",
+        "body": "break$0"
+    },
+    "case": {
+        "prefix": "case",
+        "body": "case$0"
+    },
+    "catch": {
+        "prefix": "catch",
+        "body": "catch$0"
+    },
+    "char": {
+        "prefix": "char",
+        "body": "char$0"
+    },
+    "class": {
+        "prefix": "class",
+        "body": "class$0"
+    },
+    "compl": {
+        "prefix": "compl",
+        "body": "compl$0"
+    },
+    "const": {
+        "prefix": "const",
+        "body": "const$0"
+    },
+    "const_cast": {
+        "prefix": "const_cast",
+        "body": "const_cast$0"
+    },
+    "continue": {
+        "prefix": "continue",
+        "body": "continue$0"
+    },
+    "default": {
+        "prefix": "default",
+        "body": "default$0"
+    },
+    "delete": {
+        "prefix": "delete",
+        "body": "delete$0"
+    },
+    "double": {
+        "prefix": "double",
+        "body": "double$0"
+    },
+    "dynamic_cast": {
+        "prefix": "dynamic_cast",
+        "body": "dynamic_cast$0"
+    },
+    "else": {
+        "prefix": "else",
+        "body": "else$0"
+    },
+    "enum": {
+        "prefix": "enum",
+        "body": "enum$0"
+    },
+    "explicit": {
+        "prefix": "explicit",
+        "body": "explicit$0"
+    },
+    "export": {
+        "prefix": "export",
+        "body": "export$0"
+    },
+    "extern": {
+        "prefix": "extern",
+        "body": "extern$0"
+    },
+    "false": {
+        "prefix": "false",
+        "body": "false$0"
+    },
+    "friend": {
+        "prefix": "friend",
+        "body": "friend$0"
+    },
+    "goto": {
+        "prefix": "goto",
+        "body": "goto$0"
+    },
+    "if": {
+        "prefix": "if",
+        "body": "if$0"
+    },
+    "inline": {
+        "prefix": "inline",
+        "body": "inline$0"
+    },
+    "long": {
+        "prefix": "long",
+        "body": "long$0"
+    },
+    "mutable": {
+        "prefix": "mutable",
+        "body": "mutable$0"
+    },
+    "namespace": {
+        "prefix": "namespace",
+        "body": "namespace$0"
+    },
+    "new": {
+        "prefix": "new",
+        "body": "new$0"
+    },
+    "not": {
+        "prefix": "not",
+        "body": "not$0"
+    },
+    "not_eq": {
+        "prefix": "not_eq",
+        "body": "not_eq$0"
+    },
+    "operator": {
+        "prefix": "operator",
+        "body": "operator$0"
+    },
+    "or": {
+        "prefix": "or",
+        "body": "or$0"
+    },
+    "or_eq": {
+        "prefix": "or_eq",
+        "body": "or_eq$0"
+    },
+    "private": {
+        "prefix": "private",
+        "body": "private$0"
+    },
+    "protected": {
+        "prefix": "protected",
+        "body": "protected$0"
+    },
+    "public": {
+        "prefix": "public",
+        "body": "public$0"
+    },
+    "register": {
+        "prefix": "register",
+        "body": "register$0"
+    },
+    "reinterpret_cast": {
+        "prefix": "reinterpret_cast",
+        "body": "reinterpret_cast$0"
+    },
+    "return": {
+        "prefix": "return",
+        "body": "return$0"
+    },
+    "short": {
+        "prefix": "short",
+        "body": "short$0"
+    },
+    "signed": {
+        "prefix": "signed",
+        "body": "signed$0"
+    },
+    "sizeof": {
+        "prefix": "sizeof",
+        "body": "sizeof$0"
+    },
+    "static": {
+        "prefix": "static",
+        "body": "static$0"
+    },
+    "static_cast": {
+        "prefix": "static_cast",
+        "body": "static_cast$0"
+    },
+    "struct": {
+        "prefix": "struct",
+        "body": "struct$0"
+    },
+    "switch": {
+        "prefix": "switch",
+        "body": "switch$0"
+    },
+    "template": {
+        "prefix": "template",
+        "body": "template$0"
+    },
+    "this": {
+        "prefix": "this",
+        "body": "this$0"
+    },
+    "throw": {
+        "prefix": "throw",
+        "body": "throw$0"
+    },
+    "true": {
+        "prefix": "true",
+        "body": "true$0"
+    },
+    "try": {
+        "prefix": "try",
+        "body": "try$0"
+    },
+    "typedef": {
+        "prefix": "typedef",
+        "body": "typedef$0"
+    },
+    "typeid": {
+        "prefix": "typeid",
+        "body": "typeid$0"
+    },
+    "typename": {
+        "prefix": "typename",
+        "body": "typename$0"
+    },
+    "union": {
+        "prefix": "union",
+        "body": "union$0"
+    },
+    "unsigned": {
+        "prefix": "unsigned",
+        "body": "unsigned$0"
+    },
+    "using": {
+        "prefix": "using",
+        "body": "using$0"
+    },
+    "virtual": {
+        "prefix": "virtual",
+        "body": "virtual$0"
+    },
+    "void": {
+        "prefix": "void",
+        "body": "void$0"
+    },
+    "volatile": {
+        "prefix": "volatile",
+        "body": "volatile$0"
+    },
+    "wchar_t": {
+        "prefix": "wchar_t",
+        "body": "wchar_t$0"
+    },
+    "while": {
+        "prefix": "while",
+        "body": "while$0"
+    },
+    "xor": {
+        "prefix": "xor",
+        "body": "xor$0"
+    },
+    "xor_eq": {
+        "prefix": "xor_eq",
+        "body": "xor_eq$0"
+	},
+
+	// ATTRIBUTES
+
+	"kMin": {
+        "prefix": "kMin",
+        "body": "kMin$0"
+    },
+    "kMax": {
+        "prefix": "kMax",
+        "body": "kMax$0"
+    },
+    "kWhitePoint": {
+        "prefix": "kWhitePoint",
+        "body": "kWhitePoint$0"
+    },
+    "kComps": {
+        "prefix": "kComps",
+        "body": "kComps$0"
+    },
+    "kClamps": {
+        "prefix": "kClamps",
+        "body": "kClamps$0"
+    },
+    "bounds": {
+        "prefix": "bounds",
+        "body": "bounds$0"
+    },
+    "PI": {
+        "prefix": "PI",
+        "body": "PI$0"
+	},
+
+	// ARGUMENTS
+
+	"define": {
+        "prefix": "define",
+        "body": "define$0"
+    },
+    "init": {
+        "prefix": "init",
+        "body": "init$0"
+    },
+    "process": {
+        "prefix": "process",
+        "body": "process$0"
+    },
+    "<granulation>": {
+        "prefix": "ImageComputationKernel",
+        "body": "ImageComputationKernel<e${1:Component}Wise>$0"
+    },
+    "read": {
+        "prefix": "Image",
+        "body": "Image<e${1:Read}, eAccess${2:Point}, eEdge${3:None}> $0"
+    },
+    "read ranged 2d": {
+        "prefix": "Image",
+        "body": "Image<e${1:Read}, eAccess${2:Ranged2D}, eEdge${3:Clamped}> $0"
+    },
+    "write": {
+        "prefix": "Image",
+        "body": "Image<e${1:Write}$2> $0"
+    },
+    "eComponentWise": {
+        "prefix": "eComponentWise",
+        "body": "eComponentWise$0"
+    },
+    "ePixelWise": {
+        "prefix": "ePixelWise",
+        "body": "ePixelWise$0"
+    },
+    "eRead": {
+        "prefix": "eRead",
+        "body": "eRead$0"
+    },
+    "eWrite": {
+        "prefix": "eWrite",
+        "body": "eWrite$0"
+    },
+    "eAccessPoint": {
+        "prefix": "eAccessPoint",
+        "body": "eAccessPoint$0"
+    },
+    "eAccessRanged1D": {
+        "prefix": "eAccessRanged1D",
+        "body": "eAccessRanged1D$0"
+    },
+    "eAccessRanged2D": {
+        "prefix": "eAccessRanged2D",
+        "body": "eAccessRanged2D$0"
+    },
+    "eAccessRandom": {
+        "prefix": "eAccessRandom",
+        "body": "eAccessRandom$0"
+    },
+    "eEdgeClamped": {
+        "prefix": "eEdgeClamped",
+        "body": "eEdgeClamped$0"
+    },
+    "eEdgeConstant": {
+        "prefix": "eEdgeConstant",
+        "body": "eEdgeConstant$0"
+    },
+    "eEdgeNone": {
+        "prefix": "eEdgeNone",
+        "body": "eEdgeNone$0"
+    },
+    "eX": {
+        "prefix": "eX",
+        "body": "eX$0"
+    },
+    "eY": {
+        "prefix": "eY",
+        "body": "eY$0"
+    }
+
 }
