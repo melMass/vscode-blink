@@ -1,0 +1,20 @@
+{
+	"do": {
+		"prefix": "do",
+		"body": "\r\ndo{\r\n\t$1\r\n} while(${2:condition});",
+		"description": "",
+		"scope": "source.blink"
+	},
+	"for": {
+		"prefix": "for",
+		"body": "\r\nfor(int ${1:i} = ${2:0}; ${1:i} < ${3:10}; ${1:i}++){\r\n\t$4\r\n}",
+		"description": "",
+		"scope": "source.blink"
+	},
+	"kernel": {
+		"prefix": "kernel",
+		"body": "\r\nkernel ${1:kernelName}: ImageComputationKernel<e${2:Component}Wise>{\r\n\tImage<e${3:Read}, eAccess${4:Point}, eEdge${5:None}> ${6:in};\r\n\tImage<e${7:Write}> ${8:out};\r\n\r\n\tparam:\r\n\t\t$9\r\n\r\n\tlocal:\r\n\t\t$10\r\n\r\n\t//In define(), parameters can be given labels and default values.\r\n\tvoid define(){\r\n\t\t$11\r\n\t}\r\n\r\n\t//The init() function is run before any calls to process()\r\n\tvoid init(){\r\n\t\t$12\r\n\t}\r\n\r\n\t//The process function is run at every pixel to produce the output\r\n\tvoid process($13){\r\n\t\t${14:out() = in();}\r\n\t}\r\n};",
+		"description": "",
+		"scope": "source.blink"
+	}
+}
