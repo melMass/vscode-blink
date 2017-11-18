@@ -1,0 +1,40 @@
+{
+// ATTRIBUTES
+
+	"kMin": {
+        "prefix": "kMin",
+        "body": "kMin$0",
+        "description": "The minimum possible value for any component of the image data"
+    },
+    "kMax": {
+        "prefix": "kMax",
+        "body": "kMax$0",
+        "description": "The maximum possible value for any component of the image data."
+    },
+    "kWhitePoint": {
+        "prefix": "kWhitePoint",
+        "body": "kWhitePoint$0",
+        "description": "The minimum value for any component of the image data which is considered to be white. All values above this will be what are known as “super-whites”. For example, a floating-point image will usually have a white point of 1, though values greater than 1 are also valid."
+
+    },
+    "kComps": {
+        "prefix": "kComps",
+        "body": "kComps$0",
+        "description": "The number of components in the image."
+    },
+    "kClamps": {
+        "prefix": "kClamps",
+        "body": "kClamps$0",
+        "description": "Whether the image data should be clamped or not. For example, floating point data can take any value and therefore image.kClamps will be false."
+    },
+    "bounds": {
+        "prefix": "bounds",
+        "body": "bounds$0",
+        "description": "The bounds of the image. Individual lower and upper bounds can be accessed using image.bounds.x1, image.bounds.y1 and image.bounds.x2, image.bounds.y2 respectively."
+    },
+    "PI": {
+        "prefix": "PI",
+        "body": "PI$0"
+    }
+
+}

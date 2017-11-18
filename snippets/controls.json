@@ -1,0 +1,288 @@
+
+{
+    // CONTROLS
+
+	"param": {
+        "prefix": "param",
+        "body": "param$0",
+        "description": "Param variables are similar to public member variables in C++. Values for param variables can be accessed from outside the kernel."
+    },
+    "local": {
+        "prefix": "local",
+        "body": "local$0",
+        "description": "Local variables are the equivalent of private member variables. They’re used and accessed only from within the kernel."
+    },
+    "and": {
+        "prefix": "and",
+        "body": "and$0"
+    },
+    "asm": {
+        "prefix": "asm",
+        "body": "asm$0"
+    },
+    "auto": {
+        "prefix": "auto",
+        "body": "auto$0"
+    },
+    "bitand": {
+        "prefix": "bitand",
+        "body": "bitand$0"
+    },
+    "bitor": {
+        "prefix": "bitor",
+        "body": "bitor$0"
+    },
+    "break": {
+        "prefix": "break",
+        "body": "break$0"
+    },
+    "case": {
+        "prefix": "case",
+        "body": "case$0"
+    },
+    "catch": {
+        "prefix": "catch",
+        "body": "catch$0"
+    },
+    "char": {
+        "prefix": "char",
+        "body": "char$0"
+    },
+    "class": {
+        "prefix": "class",
+        "body": "class$0"
+    },
+    "compl": {
+        "prefix": "compl",
+        "body": "compl$0"
+    },
+    "const": {
+        "prefix": "const",
+        "body": "const$0"
+    },
+    "const_cast": {
+        "prefix": "const_cast",
+        "body": "const_cast$0"
+    },
+    "continue": {
+        "prefix": "continue",
+        "body": "continue$0"
+    },
+    "default": {
+        "prefix": "default",
+        "body": "default$0"
+    },
+    "delete": {
+        "prefix": "delete",
+        "body": "delete$0"
+    },
+    "double": {
+        "prefix": "double",
+        "body": "double$0"
+    },
+    "dynamic_cast": {
+        "prefix": "dynamic_cast",
+        "body": "dynamic_cast$0"
+    },
+    "else": {
+        "prefix": "else",
+        "body": "else$0"
+    },
+    "enum": {
+        "prefix": "enum",
+        "body": "enum$0"
+    },
+    "explicit": {
+        "prefix": "explicit",
+        "body": "explicit$0"
+    },
+    "export": {
+        "prefix": "export",
+        "body": "export$0"
+    },
+    "extern": {
+        "prefix": "extern",
+        "body": "extern$0"
+    },
+    "false": {
+        "prefix": "false",
+        "body": "false$0"
+    },
+    "friend": {
+        "prefix": "friend",
+        "body": "friend$0"
+    },
+    "goto": {
+        "prefix": "goto",
+        "body": "goto$0"
+    },
+    "if": {
+        "prefix": "if",
+        "body": "if$0"
+    },
+    "inline": {
+        "prefix": "inline",
+        "body": "inline$0"
+    },
+    "long": {
+        "prefix": "long",
+        "body": "long$0"
+    },
+    "mutable": {
+        "prefix": "mutable",
+        "body": "mutable$0"
+    },
+    "namespace": {
+        "prefix": "namespace",
+        "body": "namespace$0"
+    },
+    "new": {
+        "prefix": "new",
+        "body": "new$0"
+    },
+    "not": {
+        "prefix": "not",
+        "body": "not$0"
+    },
+    "not_eq": {
+        "prefix": "not_eq",
+        "body": "not_eq$0"
+    },
+    "operator": {
+        "prefix": "operator",
+        "body": "operator$0"
+    },
+    "or": {
+        "prefix": "or",
+        "body": "or$0"
+    },
+    "or_eq": {
+        "prefix": "or_eq",
+        "body": "or_eq$0"
+    },
+    "private": {
+        "prefix": "private",
+        "body": "private$0"
+    },
+    "protected": {
+        "prefix": "protected",
+        "body": "protected$0"
+    },
+    "public": {
+        "prefix": "public",
+        "body": "public$0"
+    },
+    "register": {
+        "prefix": "register",
+        "body": "register$0"
+    },
+    "reinterpret_cast": {
+        "prefix": "reinterpret_cast",
+        "body": "reinterpret_cast$0"
+    },
+    "return": {
+        "prefix": "return",
+        "body": "return$0"
+    },
+    "short": {
+        "prefix": "short",
+        "body": "short$0"
+    },
+    "signed": {
+        "prefix": "signed",
+        "body": "signed$0"
+    },
+    "sizeof": {
+        "prefix": "sizeof",
+        "body": "sizeof$0"
+    },
+    "static": {
+        "prefix": "static",
+        "body": "static$0"
+    },
+    "static_cast": {
+        "prefix": "static_cast",
+        "body": "static_cast$0"
+    },
+    "struct": {
+        "prefix": "struct",
+        "body": "struct$0"
+    },
+    "switch": {
+        "prefix": "switch",
+        "body": "switch$0"
+    },
+    "template": {
+        "prefix": "template",
+        "body": "template$0"
+    },
+    "this": {
+        "prefix": "this",
+        "body": "this$0"
+    },
+    "throw": {
+        "prefix": "throw",
+        "body": "throw$0"
+    },
+    "true": {
+        "prefix": "true",
+        "body": "true$0"
+    },
+    "try": {
+        "prefix": "try",
+        "body": "try$0"
+    },
+    "typedef": {
+        "prefix": "typedef",
+        "body": "typedef$0"
+    },
+    "typeid": {
+        "prefix": "typeid",
+        "body": "typeid$0"
+    },
+    "typename": {
+        "prefix": "typename",
+        "body": "typename$0"
+    },
+    "union": {
+        "prefix": "union",
+        "body": "union$0"
+    },
+    "unsigned": {
+        "prefix": "unsigned",
+        "body": "unsigned$0"
+    },
+    "using": {
+        "prefix": "using",
+        "body": "using$0"
+    },
+    "virtual": {
+        "prefix": "virtual",
+        "body": "virtual$0"
+    },
+    "void": {
+        "prefix": "void",
+        "body": "void$0"
+    },
+    "volatile": {
+        "prefix": "volatile",
+        "body": "volatile$0"
+    },
+    "wchar_t": {
+        "prefix": "wchar_t",
+        "body": "wchar_t$0"
+    },
+    "while": {
+        "prefix": "while",
+        "body": "while$0"
+    },
+    "xor": {
+        "prefix": "xor",
+        "body": "xor$0"
+    },
+    "xor_eq": {
+        "prefix": "xor_eq",
+        "body": "xor_eq$0"
+    }
+
+}

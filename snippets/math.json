@@ -1,0 +1,137 @@
+{
+    // MATH
+
+    // vectors
+	"dot": {
+        "prefix": "dot",
+        "body": "dot(${1:a},${1:b})$0",
+        "description": "Dot Product\n\naccepts:int1, int2, int3, int4, float1, float2, float3, float4\nreturns:scalar"
+    },
+    "vec3 a, vec3 b": {
+        "prefix": "cross",
+        "body": "cross(${1:a},${1:b})$0",
+        "description": "Cross Product\n\nreturns:vec3"
+    },
+    "length": {
+        "prefix": "length",
+        "body": "length(${1:a})$0",
+        "description": "Returns the length of the vector\n\naccepts:int1, int2, int3, int4, float1, float2, float3, float4\nreturns:scalar"
+    },
+
+    "normalize": {
+        "prefix": "normalize",
+        "body": "normalize(${1:a})$0",
+        "description": "Returns the result of dividing vector *a* by its length."
+    },
+
+    // trigonometric functions
+    "sin": {
+        "prefix": "sin",
+        "body": "sin(${1:a})$0"
+    },
+    "cos": {
+        "prefix": "cos",
+        "body": "cos(${1:a})$0"
+    },
+    "tan": {
+        "prefix": "tan",
+        "body": "tan(${1:a})$0"
+    },
+    "asin": {
+        "prefix": "asin",
+        "body": "asin(${1:a})$0"
+    },
+    "acos": {
+        "prefix": "acos",
+        "body": "acos(${1:a})$0"
+    },
+    "atan": {
+        "prefix": "atan",
+        "body": "atan(${1:a})$0"
+    },
+    "atan2": {
+        "prefix": "atan2",
+        "body": "atan2(${1:a})$0"
+    },
+
+    // logarithmic functions
+    "exp": {
+        "prefix": "exp",
+        "body": "exp(${1:a})$0"
+    },
+    "log": {
+        "prefix": "log",
+        "body": "log(${1:a})$0"
+    },
+    "log2": {
+        "prefix": "log2",
+        "body": "log2(${1:a})$0"
+    },
+    "log10": {
+        "prefix": "log10",
+        "body": "log10(${1:a})$0"
+    },
+    "floor": {
+        "prefix": "floor",
+        "body": "floor(${1:a})$0"
+    },
+    "ceil": {
+        "prefix": "ceil",
+        "body": "ceil(${1:a})$0"
+    },
+    "round": {
+        "prefix": "round",
+        "body": "round(${1:a})$0",
+        "description": "Rounds to the nearest integer"
+    },
+    "pow": {
+        "prefix": "pow",
+        "body": "pow(${1:a},${2:b})$0"
+    },
+    "sqrt": {
+        "prefix": "sqrt",
+        "body": "sqrt(${1:a})$0"
+    },
+    "rsqrt": {
+        "prefix": "rsqrt",
+        "body": "rsqrt(${1:a})$0"
+    },
+    "abs": {
+        "prefix": "abs",
+        "body": "abs(${1:a})$0"
+    },
+    "fabs": {
+        "prefix": "fabs",
+        "body": "fabs(${1:a})$0"
+    },
+    "fmod": {
+        "prefix": "fmod",
+        "body": "fmod(${1:a},${2:b})$0"
+    },
+    "modf": {
+        "prefix": "modf",
+        "body": "modf(${1:a},${2:b})$0"
+    },
+    "sign": {
+        "prefix": "sign",
+        "body": "sign(${1:a})$0"
+    },
+    "min": {
+        "prefix": "min",
+        "body": "min(${1:a},${2:b})$0"
+    },
+    "max": {
+        "prefix": "max",
+        "body": "max(${1:a},${2:b})$0"
+    },
+    "clamp": {
+        "prefix": "clamp",
+        "body": "clamp(${1:a},${2:min},${3:max})$0",
+        "description": "Clamp a to be between min and max"
+    },
+    "rcp": {
+        "prefix": "rcp",
+        "body": "rc(${1:a})p$0"
+    }
+
+}

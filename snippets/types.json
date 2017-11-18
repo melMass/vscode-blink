@@ -1,0 +1,56 @@
+{
+    // TYPES
+	"int": {
+        "prefix": "int",
+        "body": "int$0"
+    },
+    "int2": {
+        "prefix": "int2",
+        "body": "int2$0"
+    },
+    "int3": {
+        "prefix": "int3",
+        "body": "int3$0"
+    },
+    "int4": {
+        "prefix": "int4",
+        "body": "int4$0"
+    },
+    "float": {
+        "prefix": "float",
+        "body": "float$0"
+    },
+    "float2": {
+        "prefix": "float2",
+        "body": "float2$0"
+    },
+    "float3": {
+        "prefix": "float3",
+        "body": "float3$0"
+    },
+    "float4": {
+        "prefix": "float4",
+        "body": "float4$0"
+    },
+    "float3x3": {
+        "prefix": "float3x3",
+        "body": "float3x3$0"
+    },
+    "float4x4": {
+        "prefix": "float4x4",
+        "body": "float4x4$0"
+    },
+    "bool": {
+        "prefix": "bool",
+        "body": "bool$0"
+    },
+    "recti": {
+        "prefix": "recti",
+        "body": "recti$0"
+    },
+    "rectf": {
+        "prefix": "rectf",
+        "body": "rectf$0"
+    }
+
+}

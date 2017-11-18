@@ -1,0 +1,118 @@
+{
+    // Kernel Granularity
+    "eComponentWise": {
+        "prefix": "eComponentWise",
+        "body": "eComponentWise$0",
+        "description": "The kernel processes the image one component at a time. Only the current component’s value can be accessed in any of the input images, or written to in the output image."
+    },
+    "ePixelWise": {
+        "prefix": "ePixelWise",
+        "body": "ePixelWise$0",
+        "description": "The kernel processes the image one pixel at a time. All component values can be read from and written to."
+
+    },
+
+    // Process
+
+    "process": {
+        "prefix": "process",
+        "body": "process()$0",
+        "description": "Use this for kernels which do the same processing regardless of where they are in the iteration space."
+    },
+
+    "int2": {
+        "prefix": "process",
+        "body": "process(int2 ${1:pos})$0",
+        "description": "Use this for kernels which need to know the x (pos.x) and y (pos.y) coordinates of their position in the iteration space."
+    },
+    "int3": {
+        "prefix": "process",
+        "body": "process(int3 ${1:pos})$0",
+        "description": "Only available for kernels with eComponentWise granularity. Here, (pos.x, pos.y) gives the coordinates of the current position in the iteration space, while pos.z is the current component."
+    },
+
+    //
+	"define": {
+        "prefix": "define",
+        "body": "define()$0",
+        "description": "define() is a special method that’s used to provide more information about kernel parameters."
+    },
+    "init": {
+        "prefix": "init",
+        "body": "init()$0",
+        "description": "The init() method is called before the kernel() function is run. It’s used for setting up access to images and initialising local variables."
+    },
+
+    "<granulation>": {
+        "prefix": "ImageComputationKernel",
+        "body": "ImageComputationKernel<e${1:Component}Wise>$0"
+    },
+    "read": {
+        "prefix": "Image",
+        "body": "Image<e${1:Read}, eAccess${2:Point}, eEdge${3:None}> $0"
+    },
+    "read ranged 2d": {
+        "prefix": "Image",
+        "body": "Image<e${1:Read}, eAccess${2:Ranged2D}, eEdge${3:Clamped}> $0"
+    },
+    "write": {
+        "prefix": "Image",
+        "body": "Image<e${1:Write}$2> $0"
+    },
+
+    "eRead": {
+        "prefix": "eRead",
+        "body": "eRead$0"
+    },
+    "eWrite": {
+        "prefix": "eWrite",
+        "body": "eWrite$0"
+    },
+    // Image Specification
+    // access patterns
+    "eAccessPoint": {
+        "prefix": "eAccessPoint",
+        "body": "eAccessPoint$0",
+        "description": "(default)\nAccess only the current position in the iteration space.\n\nNo parameters related to the image specification are needed.\n\nimage()"
+    },
+    "eAccessRanged1D": {
+        "prefix": "eAccessRanged1D",
+        "body": "eAccessRanged1D$0",
+        "description": "Access a one-dimensional range of positions relative to the current position in the iteration space.\n\nThe first parameter is an integer offset along the chosen axis for the point in the image to be accessed. The offset is relative to the current position in the iteration space.\n\nimage(int offset)"
+    },
+    "eAccessRanged2D": {
+        "prefix": "eAccessRanged2D",
+        "body": "eAccessRanged2D$0",
+        "description": "Access a two-dimensional range of positions relative to the current position in the iteration space.\n\nThe first two parameters are integer offsets in the x- and y-axes respectively for the point in the image to be accessed. Both offsets are relative to the current position in the iteration space.\n\nimage(int horizontalOffset, int verticalOffset)"
+    },
+    "eAccessRandom": {
+        "prefix": "eAccessRandom",
+        "body": "eAccessRandom$0",
+        "description": "Access any pixel in the iteration space.\n\nThe first two parameters are the x and y coordinates of the position in the image you wish to access.\n\nimage(int x, int y)"
+    },
+
+    // edge methods
+    "eEdgeClamped": {
+        "prefix": "eEdgeClamped",
+        "body": "eEdgeClamped$0",
+        "description": "The edge values will be repeated outside the image bounds."
+    },
+    "eEdgeConstant": {
+        "prefix": "eEdgeConstant",
+        "body": "eEdgeConstant$0",
+        "description": "Zero values will be returned outside the image bounds."
+    },
+    "eEdgeNone": {
+        "prefix": "eEdgeNone",
+        "body": "eEdgeNone$0",
+        "description": "(default)\nValues are undefined outside the image bounds and no within-bounds checks will be done when you access the image. This is the most efficient access method to use when you do not require access outside the bounds, because of the lack of bounds checks."
+    },
+    "eX": {
+        "prefix": "eX",
+        "body": "eX$0"
+    },
+    "eY": {
+        "prefix": "eY",
+        "body": "eY$0"
+    }
+}

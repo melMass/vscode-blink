@@ -1,0 +1,129 @@
+{
+    // METHODS
+	"int": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", ${3:0});$0"
+    },
+    "int2": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", int2(${3:0}, ${4:0}));$0"
+    },
+    "int3": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", int3(${3:0}, ${4:0}, ${5:0}));$0"
+    },
+    "int4": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", int4(${3:0}, ${4:0}, ${5:0}, ${6:0}));$0"
+    },
+    "float": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", ${3:0.0}f);$0"
+    },
+    "float2": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", float2(${3:0.0}f, ${4:0.0}f));$0"
+    },
+    "float3": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", float3(${3:0.0}f, ${4:0.0}f, ${5:0.0}f));$0"
+    },
+    "float4": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", float4(${3:0.0}f, ${4:0.0}f, ${5:0.0}f, ${6:0.0}f));$0"
+    },
+    "bool": {
+        "prefix": "defineParam",
+        "body": "defineParam(${1:name}, \"${2:externalName}\", ${3:false});$0"
+    },
+    "axis 1D": {
+        "prefix": "setAxis",
+        "body": "setAxis(e${1:X})$0",
+        "description": "axis can be one of eX (horizontal) or eY (vertical)."
+    },
+    "int min, int max 1D": {
+        "prefix": "setRange",
+        "body": "setRange(${1:-1}, ${2:1})$0",
+        "description": "This sets the minimum and maximum extent of the range (inclusive on both sides). In the 2D case, it will set the minimum and maximum values to be the same for both axes."
+    },
+    "xMin, yMin, xMax, yMax 2D": {
+        "prefix": "setRange",
+        "body": "setRange(${1:-1}, ${2:-1}, ${3:1}, ${4:1})$0",
+        "description": "This allows you to define asymmetric bounds for 2D ranged access. Again, the ranges are inclusive on both sides."
+    },
+    "image": {
+        "prefix": "SampleType",
+        "body": "SampleType(${1:in})$0"
+    },
+    "image, float x, float y": {
+        "prefix": "bilinear",
+        "body": "bilinear(${1:img}, ${2:0.0}f, ${3:0.0}f)$0",
+        "description": "Bilinear can be used to access pixels or components at non-integer positions within an Image. It does bilinear interpolation to estimate the appropriate value from the four pixels or components nearest to the requested position."
+    },
+    "image, float x, float y, int c": {
+        "prefix": "bilinear",
+        "body": "bilinear(${1:img}, ${2:0.0}f, ${3:0.0}f, ${4:0})$0",
+        "description": "Bilinear can be used to access pixels or components at non-integer positions within an Image. It does bilinear interpolation to estimate the appropriate value from the four pixels or components nearest to the requested position."
+    },
+    "median": {
+        "prefix": "median",
+        "body": "median(${1:data},${2:size})$0",
+        "description": "Finds the median value in an array of data of length size"
+    },
+    "rect": {
+        "prefix": "rect",
+        "body": "rect()$0",
+        "description": "Construct without initialising"
+    },
+    "scalar x1, scalar y1, scalar x2, scalar y2":{
+        "prefix": "rect",
+        "body": "rect(${1:x1}, ${2:y1}f, ${3:x2}f, ${4:y2})$0",
+        "description": "Construct a rectangle that goes from (x1, y1) to (x2, y2)"
+    },
+    "grow": {
+        "prefix": "grow",
+        "body": "grow(${1:x},${2:y})$0",
+        "description": "Grow the bounds by x in the horizontal axis and y in the vertical"
+    },
+    "inside": {
+        "prefix": "inside",
+        "body": "inside(${1:x},${2:y})$0",
+        "description": "Return whether or not the position (x, y) is inside the rectangle"
+    },
+    "vec v":{
+        "prefix": "inside",
+        "body": "inside(${1:v})$0",
+        "description": "Return whether or not the position represented by the vector v is inside the rectangle"
+    },
+    "width": {
+        "prefix": "width",
+        "body": "width()$0",
+        "description": "Return the width of the rectangle"
+    },
+    "height": {
+        "prefix": "height",
+        "body": "height()$0",
+        "description": "Return the height of the rectangle or a vector containing the width and height of the rectangle"
+    },
+    "atomicAdd": {
+        "prefix": "atomicAdd",
+        "body": "atomicAdd(${1:ptr},${2:val})$0",
+        "description": "Atomically increment the value at the address pointed to by ptr by val"
+    },
+    "atomicInc": {
+        "prefix": "atomicInc",
+        "body": "atomicInc(${1:ptr})$0",
+        "description": "Atomically increment the value at the address pointed to by ptr by 1"
+    },
+    "ValueType": {
+        "prefix": "ValueType",
+        "body": "ValueType(${1:image})$0",
+        "description": "The data type of the image components."
+    },
+    "SampleType": {
+        "prefix": "SampleType",
+        "body": "SampleType(${1:image})$0",
+        "description": "The data type for the pixels. For example, if ValueType(image) is float and there are three components in your image, SampleType(image) will be float3."
+    }
+
+}
