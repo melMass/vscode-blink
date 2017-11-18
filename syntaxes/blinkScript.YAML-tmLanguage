@@ -1,0 +1,106 @@
+name: blinkScript
+scopeName: source.blink
+fileTypes: [blink]
+uuid: 468fd5da-7659-4ced-9c80-07e924b2ca33
+
+patterns:
+- comment: preprocessors like #define..
+  captures:
+    '1': {name: entity.name.function.blink}
+  match: \s*((#).*$\n?)
+
+- comment: exclusive highlighting for "kernel" keyword..
+  name: invalid.illegal.blink
+  match: \b(kernel)\b
+
+- comment: list of reserved keywords(many inherited from c++, however not all have been tested)..
+  name: keyword.control.blink
+  match: \b(param|local|and|asm|auto|bitand|bitor|break|case|catch|char|class|compl|const|const_cast|continue|default|delete|do|double|dynamic_cast|else|enum|explicit|export|extern|for|friend|goto|if|inline|long|mutable|namespace|new|not|not_eq|operator|or|or_eq|private|protected|public|register|reinterpret_cast|return|short|signed|sizeof|static|static_cast|struct|switch|template|this|throw|try|typedef|typeid|typename|union|unsigned|using|virtual|void|volatile|wchar_t|while|xor|xor_eq)\b
+
+- comment: blink kernel basics..
+  name: variable.parameter.blink
+  match: \b(ImageComputationKernel|define|init|process)\b
+
+- comment: blink basic parameters..
+  name: support.constant.blink
+  match: \b(Image|eComponentWise|ePixelWise|eRead|eWrite|eAccessPoint|eAccessRanged1D|eAccessRanged2D|eAccessRandom|eEdgeClamped|eEdgeConstant|eEdgeNone|eX|eY)\b
+
+- comment: blink attributes..
+  name: entity.other.attribute-name.blink
+  match: \b(kMin|kMax|kWhitePoint|kComps|kClamps|bounds|PI)\b
+
+- comment: blink functions and methods..
+  name: entity.name.function.blink
+  match: \b(defineParam|setAxis|setRange|ValueType|SampleType|bilinear|median|rect|grow|inside|width|height)\b
+
+- comment: vector functions..
+  name: entity.name.function.blink
+  match: \b(dot|cross|length|normalize)\b
+
+- comment: trigonometric functions..
+  name: entity.name.function.blink
+  match: \b(sin|cos|tan|asin|acos|atan(2)?)\b
+
+- comment: logarithmic and exponential functions..
+  name: entity.name.function.blink
+  match: \b(exp|log(2|10)?)\b
+
+- comment: math functions..
+  name: entity.name.function.blink
+  match: \b(floor|ceil|round|pow|r?sqrt|f?abs|fmod|modf|sign|min|max|clamp|rcp)\b
+
+- comment: atomic functions..
+  name: entity.name.function.blink
+  match: \b(atomicAdd|atomicInc)\b
+
+- comment: data types..
+  name: storage.type.blink
+  match: \b(int[2-4]?|float[2-4]?|float[3-4]x[3-4]|bool)\b
+
+- comment: special types..
+  name: storage.type.blink
+  match: \b(recti|rectf)\b
+
+- comment: regular expression for integer numbers..
+  name: constant.numeric.blink
+  match: \b[0-9]+\b
+
+- comment: regular expression for floating point numbers..
+  name: constant.numeric.blink
+  match: \b([0-9]+\.[0-9]*|\.[0-9]*)((e|E)(\+|-)?[0-9]+)?(f|F|l|L)?\b
+
+- comment: regular expression for binary numbers..
+  name: constant.numeric.blink
+  match: \b(0(b|B)[0-1]*)\b
+
+- comment: regular expression for hexadecimal numbers..
+  name: constant.numeric.blink
+  match: \b(0(x|X)[0-9a-fA-F]+)\b
+
+- comment: boolean values match..
+  name: constant.numeric.blink
+  match: \b(true|false)\b
+
+- comment: string match..
+  name: string.quoted.double.blink
+  begin: '"'
+  beginCaptures:
+    '1':
+      name: punctuation.definition.string.begin.blink
+  end: '"'
+  endCaptures:
+    '1':
+      name: punctuation.definition.string.end.blink
+
+- comment: line comment match..
+  captures:
+    '1': {name: comment.line.double-slash.blink}
+    '2': {name: punctuation.definition.comment.blink}
+  match: \s*((//).*$\n?)
+
+- comment: block comment match..
+  name: comment.block.blink
+  begin: /\*
+  captures:
+    '1': {name: punctuation.definition.comment.blink}
+  end: \*/
