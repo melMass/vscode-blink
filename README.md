@@ -1,4 +1,8 @@
-# Blink script Syntax for VSCode
+# (DEPRECATED) as pointed out by Maverick Xue, this extension has no real use. I also unpublished the plugin.
+
+---
+
+## Blink script Syntax for VSCode
 
 **adapted to vscode from [Diegoinacio Sublime version.](https://github.com/diegoinacio/blinkScript-sublime)**
 
